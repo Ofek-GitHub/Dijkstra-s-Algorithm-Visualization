@@ -50,7 +50,7 @@ class Box:
         if self.i < columns - 1:                            # same check for the last row.
             self.neighbors.append(grid[self.i + 1][self.j]) # adding the neighbor from below 
         if self.j > 0:
-            self.neighbors.append(grid[self.i][self.j - 1]) # im doing it for the left side neighbor aswell as the right side neighbor in the next line :)
+            self.neighbors.append(grid[self.i][self.j - 1]) # im doing it for the left side neighbor as well as the right side neighbor in the next line :)
         if self.j < rows - 1:
             self.neighbors.append(grid[self.i][self.j + 1]) # adding the neighbor from the right side.
         
