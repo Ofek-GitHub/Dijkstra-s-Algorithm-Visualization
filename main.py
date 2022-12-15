@@ -110,7 +110,7 @@ def main():
         if begin_search:
             if len(queue) > 0  and searching :  # we check if the len of queue is bigger then 0 and searching = true
                 current_box =queue.pop(0)       # current box equal for the first box in the que, will be the start box first of! afterwards will get rid of it.
-                current_box.visited = True      #
+                current_box.visited = True      
                 if current_box == target_box:
                     searching = False # to interrupt the algo, because we finished.
                     while current_box.prior != start_box:
@@ -120,6 +120,7 @@ def main():
                     for neighbor in current_box.neighbors:
                         if not neighbor.queued and not neighbor.wall:
                             neighbor.queued = True
+                            neighbor.prior = current_box
                             queue.append(neighbor)  # this else contains for loop iteration for all the neighbor in the current box.
                                                      # if the neighbor not yet been added to the que, and he is not a wall box, we will add it to the que to check it later.
             else:
